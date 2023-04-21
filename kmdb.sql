@@ -139,44 +139,45 @@ CREATE TABLE characters (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   char_first_name TEXT,
   char_last_name TEXT,
+  studio_id INTEGER
 );
 
 -- Insert data into your database that reflects the sample data shown above
 -- Use hard-coded foreign key IDs when necessary
 -- TODO!
 
-INSERT INTO actors (NULL, first_name, last_name) VALUES
+INSERT INTO movies (NULL, title, year_realeased, mppa_rating, studio_id) VALUES
 (NULL,"Batman Begins",2005, "PG-13",1),
 (NULL,"Batman Begins",2005, "PG-13",1),
 (NULL,"Batman Begins",2005, "PG-13",1);
 
-INSERT INTO movies (NULL, first_name, last_name) VALUES
-(NULL,"Christian","Bale"),
-(NULL,"Michael","Caine"),
-(NULL,"Liam","Neeson"),
-(NULL,"Katie","Holmes"),
-(NULL,"Gary","Oldman"),
-(NULL,"Heath","Ledger"),
-(NULL,"Aaron","Eckhart"),
-(NULL,"Maggie","Gyllenhaal"),
-(NULL,"Tom","Hardy"),
-(NULL,"Joseph","Gordon-Levitt"),
-(NULL,"Anne","Hathaway");
+INSERT INTO actors (NULL, first_name, last_name, character_id) VALUES
+(NULL,"Christian","Bale"1),
+(NULL,"Michael","Caine"2),
+(NULL,"Liam","Neeson"3),
+(NULL,"Katie","Holmes"4),
+(NULL,"Gary","Oldman"5),
+(NULL,"Heath","Ledger"6),
+(NULL,"Aaron","Eckhart"7),
+(NULL,"Maggie","Gyllenhaal"4),
+(NULL,"Tom","Hardy"8),
+(NULL,"Joseph","Gordon-Levitt"9),
+(NULL,"Anne","Hathaway"10);
 
 INSERT INTO studios (NULL, studio_name) VALUES
 (NULL, "Warner Bros.");
 
-INSERT INTO characters (NULL, char_first_name, char_last_name) VALUES
-(NULL,"Bruce","Wayne"),
-(NULL,"Alfred",""),
-(NULL,"Ra's Al","Ghul"),
-(NULL,"Rachel","Dawes"),
-(NULL,"Commissioner","Gordon"),
-(NULL,"Joker",""),
-(NULL,"Bane",""),
-(NULL,"John","Blake"),
-(NULL,"Selina","Kyle");
-
+INSERT INTO characters (NULL, char_first_name, char_last_name, studio_id) VALUES
+(NULL,"Bruce","Wayne",1),
+(NULL,"Alfred","",1),
+(NULL,"Ra's Al","Ghul",1),
+(NULL,"Rachel","Dawes",1),
+(NULL,"Commissioner","Gordon",1),
+(NULL,"Joker","",1),
+(NULL,"Harvey","Dent",1),
+(NULL,"Bane","",1),
+(NULL,"John","Blake",1),
+(NULL,"Selina","Kyle",1);
 
 -- Prints a header for the movies output
 .print "Movies"
@@ -185,6 +186,8 @@ INSERT INTO characters (NULL, char_first_name, char_last_name) VALUES
 
 -- The SQL statement for the movies output
 -- TODO!
+
+
 
 -- Prints a header for the cast output
 .print ""
