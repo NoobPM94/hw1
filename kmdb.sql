@@ -132,7 +132,7 @@ CREATE TABLE actors (
 
 CREATE TABLE studios (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
-  studio_name TEXT
+  name TEXT
 );
 
 CREATE TABLE characters (
@@ -164,8 +164,7 @@ INSERT INTO actors (first_name, last_name, character_id) VALUES
 ("Joseph","Gordon-Levitt",9),
 ("Anne","Hathaway",10);
 
-INSERT INTO studios (studio_name) VALUES
-("Warner Bros.");
+INSERT INTO studios (name) VALUES ("Warner Bros.");
 
 INSERT INTO characters (char_first_name, char_last_name, studio_id) VALUES
 ("Bruce","Wayne",1),
@@ -187,10 +186,9 @@ INSERT INTO characters (char_first_name, char_last_name, studio_id) VALUES
 -- The SQL statement for the movies output
 -- TODO!
 
-SELECT movies.title, movies.year_released, movies.mppa_rating, studios.studio_name 
+SELECT movies.title, movies.year_released, movies.mppa_rating, studios.name 
 FROM movies;
-  INNER JOIN  studio ON movies.studio_id = studios.id
-  ORDER BY  movies.year_released
+INNER JOIN  studios ON studios.id = movies.studio_id;
 
 -- Prints a header for the cast output
 .print ""
