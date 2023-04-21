@@ -146,23 +146,23 @@ CREATE TABLE characters (
 -- Use hard-coded foreign key IDs when necessary
 -- TODO!
 
-INSERT INTO movies (title, year_realeased, mppa_rating, studio_id) VALUES
+INSERT INTO movies (title, year_released, mppa_rating, studio_id) VALUES
 ("Batman Begins",2005, "PG-13",1),
 ("Batman Begins",2005, "PG-13",1),
 ("Batman Begins",2005, "PG-13",1);
 
 INSERT INTO actors (first_name, last_name, character_id) VALUES
-("Christian","Bale"1),
-("Michael","Caine"2),
-("Liam","Neeson"3),
-("Katie","Holmes"4),
-("Gary","Oldman"5),
-("Heath","Ledger"6),
-("Aaron","Eckhart"7),
-("Maggie","Gyllenhaal"4),
-("Tom","Hardy"8),
-("Joseph","Gordon-Levitt"9),
-("Anne","Hathaway"10);
+("Christian","Bale",1),
+("Michael","Caine",2),
+("Liam","Neeson",3),
+("Katie","Holmes",4),
+("Gary","Oldman",5),
+("Heath","Ledger",6),
+("Aaron","Eckhart",7),
+("Maggie","Gyllenhaal",4),
+("Tom","Hardy",8),
+("Joseph","Gordon-Levitt",9),
+("Anne","Hathaway",10);
 
 INSERT INTO studios (studio_name) VALUES
 ("Warner Bros.");
@@ -187,10 +187,10 @@ INSERT INTO characters (char_first_name, char_last_name, studio_id) VALUES
 -- The SQL statement for the movies output
 -- TODO!
 
-SELECT movies.title, movies.year_realeased, movies.mppa_rating, studio.studio_name 
+SELECT movies.title, movies.year_released, movies.mppa_rating, studios.studio_name 
 FROM movies;
-  INNER JOIN  studio ON movies.studio_id = studio.id
-  ORDER BY  movies.year_realeased
+  INNER JOIN  studio ON movies.studio_id = studios.id
+  ORDER BY  movies.year_released
 
 -- Prints a header for the cast output
 .print ""
