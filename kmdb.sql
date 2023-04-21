@@ -141,6 +141,7 @@ CREATE TABLE movies (
   title TEXT,
   year_released INTEGER,
   mppa_rating TEXT,
+  studio_id INTEGER,
 );
 
 CREATE TABLE actors (
@@ -158,4 +159,5 @@ CREATE TABLE characters (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   char_first_name TEXT,
   char_last_name TEXT,
+  actor_id INTEGER
 );
