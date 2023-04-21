@@ -120,19 +120,19 @@ CREATE TABLE movies (
   title TEXT,
   year_released INTEGER,
   mppa_rating INTEGER,
-  studio_id INTEGER,
+  studio_id INTEGER
 );
 
 CREATE TABLE actors (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   first_name TEXT,
   last_name TEXT,
-  character_id INTEGER,
+  character_id INTEGER
 );
 
 CREATE TABLE studios (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
-  studio_name TEXT,
+  studio_name TEXT
 );
 
 CREATE TABLE characters (
@@ -146,38 +146,38 @@ CREATE TABLE characters (
 -- Use hard-coded foreign key IDs when necessary
 -- TODO!
 
-INSERT INTO movies (NULL, title, year_realeased, mppa_rating, studio_id) VALUES
-(NULL,"Batman Begins",2005, "PG-13",1),
-(NULL,"Batman Begins",2005, "PG-13",1),
-(NULL,"Batman Begins",2005, "PG-13",1);
+INSERT INTO movies (title, year_realeased, mppa_rating, studio_id) VALUES
+("Batman Begins",2005, "PG-13",1),
+("Batman Begins",2005, "PG-13",1),
+("Batman Begins",2005, "PG-13",1);
 
-INSERT INTO actors (NULL, first_name, last_name, character_id) VALUES
-(NULL,"Christian","Bale"1),
-(NULL,"Michael","Caine"2),
-(NULL,"Liam","Neeson"3),
-(NULL,"Katie","Holmes"4),
-(NULL,"Gary","Oldman"5),
-(NULL,"Heath","Ledger"6),
-(NULL,"Aaron","Eckhart"7),
-(NULL,"Maggie","Gyllenhaal"4),
-(NULL,"Tom","Hardy"8),
-(NULL,"Joseph","Gordon-Levitt"9),
-(NULL,"Anne","Hathaway"10);
+INSERT INTO actors (first_name, last_name, character_id) VALUES
+("Christian","Bale"1),
+("Michael","Caine"2),
+("Liam","Neeson"3),
+("Katie","Holmes"4),
+("Gary","Oldman"5),
+("Heath","Ledger"6),
+("Aaron","Eckhart"7),
+("Maggie","Gyllenhaal"4),
+("Tom","Hardy"8),
+("Joseph","Gordon-Levitt"9),
+("Anne","Hathaway"10);
 
-INSERT INTO studios (NULL, studio_name) VALUES
-(NULL, "Warner Bros.");
+INSERT INTO studios (studio_name) VALUES
+("Warner Bros.");
 
-INSERT INTO characters (NULL, char_first_name, char_last_name, studio_id) VALUES
-(NULL,"Bruce","Wayne",1),
-(NULL,"Alfred","",1),
-(NULL,"Ra's Al","Ghul",1),
-(NULL,"Rachel","Dawes",1),
-(NULL,"Commissioner","Gordon",1),
-(NULL,"Joker","",1),
-(NULL,"Harvey","Dent",1),
-(NULL,"Bane","",1),
-(NULL,"John","Blake",1),
-(NULL,"Selina","Kyle",1);
+INSERT INTO characters (char_first_name, char_last_name, studio_id) VALUES
+("Bruce","Wayne",1),
+("Alfred","",1),
+("Ra's Al","Ghul",1),
+("Rachel","Dawes",1),
+("Commissioner","Gordon",1),
+("Joker","",1),
+("Harvey","Dent",1),
+("Bane","",1),
+("John","Blake",1),
+("Selina","Kyle",1);
 
 -- Prints a header for the movies output
 .print "Movies"
@@ -187,7 +187,10 @@ INSERT INTO characters (NULL, char_first_name, char_last_name, studio_id) VALUES
 -- The SQL statement for the movies output
 -- TODO!
 
-SELECT title, year_realeased, mppa_rating FROM movies;
+SELECT movies.title, movies.year_realeased, movies.mppa_rating, studio.studio_name 
+FROM movies;
+  INNER JOIN  studio ON movies.studio_id = studio.id
+  ORDER BY  movies.year_realeased
 
 -- Prints a header for the cast output
 .print ""
@@ -198,4 +201,3 @@ SELECT title, year_realeased, mppa_rating FROM movies;
 
 -- The SQL statement for the cast output
 -- TODO!
-
