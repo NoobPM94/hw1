@@ -187,7 +187,7 @@ INSERT INTO characters (NULL, char_first_name, char_last_name, studio_id) VALUES
 -- The SQL statement for the movies output
 -- TODO!
 
-
+SELECT title, year_realeased, mppa_rating FROM movies;
 
 -- Prints a header for the cast output
 .print ""
